@@ -20,16 +20,8 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Emmanuel Perez/Documents/Trabajo Pasantia/Menu de documentos/MenuDeDocumentos/MenuDeDocumentos/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Emmanuel Perez/Documents/Trabajo Pasantia/Menu de documentos/MenuDeDocumentos/MenuDeDocumentos/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Emmanuel Perez/Documents/Trabajo Pasantia/Menu de documentos/MenuDeDocumentos/MenuDeDocumentos/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/Emmanuel Perez/Documents/Trabajo Pasantia/Menu de documentos/MenuDeDocumentos/MenuDeDocumentos/Views/Documento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Emmanuel Perez/Documents/Trabajo Pasantia/Menu de documentos/MenuDeDocumentos/MenuDeDocumentos/Views/Shared/_ValidationScriptsPartial.cshtml]
