@@ -16,23 +16,73 @@ public class DocumentoService : IDocumentoService
             ?? throw new InvalidOperationException("La cadena de conexión 'ConexionSIGOB' no existe.");
     }
 
-    public async Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigo, string nombreTabla)
+    public async Task<List<Documento>> ObtenerListaDocumentosAsync()
     {
+        var lista = new List<Documento>();
+        int codigoTramite = 1645;
+
         await using var conn = new SqlConnection(_connectionString);
-        await using var cmd = new SqlCommand("[dbo].[usp_buscar_documentos_tramite_compras]", conn)
+        await using var cmd = new SqlCommand("[dbo].[sp_PasanteObtenerDocumento]", conn)
         {
             CommandType = CommandType.StoredProcedure
         };
 
-        cmd.Parameters.AddWithValue("@nombre_mia", nombreTabla);
-        cmd.Parameters.AddWithValue("@codigo", codigo);
+        cmd.Parameters.AddWithValue("@CodigoDocumento", codigoTramite);
 
         await conn.OpenAsync();
         await using var reader = await cmd.ExecuteReaderAsync();
 
-        if (await reader.ReadAsync() && !reader.IsDBNull(reader.GetOrdinal("document")))
+        int idAutoIncrement = 1;
+
+        while (await reader.ReadAsync())
         {
-            return (byte[])reader["document"];
+            int ordinalCodigo = HasColumn(reader, "codigo") ? reader.GetOrdinal("codigo") : -1;
+            int codigoFinal = ordinalCodigo != -1 ? Convert.ToInt32(reader[ordinalCodigo]) : idAutoIncrement++;
+
+            lista.Add(new Documento
+            {
+                Codigo = codigoFinal,
+                Categoria = reader["molde"].ToString() ?? "General",
+                Nombre = reader["nombre"].ToString() ?? "Sin Título"
+            });
+        }
+
+        return lista;
+    }
+
+    // Función auxiliar para verificar si existe una columna por su nombre
+    private static bool HasColumn(SqlDataReader reader, string columnName)
+    {
+        for (int i = 0; i < reader.FieldCount; i++)
+        {
+            if (reader.GetName(i).Equals(columnName, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public async Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigo, string nombreTabla)
+    {
+        await using var conn = new SqlConnection(_connectionString);
+        await using var cmd = new SqlCommand("[dbo].[sp_PasanteObtenerDocumento]", conn)
+        {
+            CommandType = CommandType.StoredProcedure
+        };
+
+        cmd.Parameters.AddWithValue("@CodigoDocumento", codigo);
+
+        await conn.OpenAsync();
+        await using var reader = await cmd.ExecuteReaderAsync();
+
+        if (await reader.ReadAsync())
+        {
+            string colNombre = reader.GetOrdinal("documento") != -1 ? "documento" : "document";
+            if (!reader.IsDBNull(reader.GetOrdinal(colNombre)))
+            {
+                return (byte[])reader[colNombre];
+            }
         }
 
         return null;
@@ -63,10 +113,5 @@ public class DocumentoService : IDocumentoService
             if (File.Exists(rutaComprimida)) File.Delete(rutaComprimida);
             if (!string.IsNullOrEmpty(rutaDescomprimida) && File.Exists(rutaDescomprimida)) File.Delete(rutaDescomprimida);
         }
-    }
-
-    public async Task<List<Documento>> ObtenerListaDocumentosAsync()
-    {
-        throw new NotImplementedException();
     }
 }
