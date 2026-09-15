@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -7,37 +8,38 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-light">
 
-
-    <div class="cgr-top-banner p-4 mb-4 d-flex align-items-center">
+    <!-- Encabezado Institucional Superior -->
+    <header class="cgr-top-banner px-4 py-3 d-flex align-items-center shadow-sm">
         <!-- Logo blanco a la izquierda -->
-        <div class="me-4 d-none d-md-block">
-            <img src="~/images/logo_contraloria_blanco.png" alt="Logo CGR" class="img-fluid" style="max-height: 55px;" />
+        <div class="me-3 d-none d-md-block">
+            <img src="~/images/logo_contraloria_blanco.png" alt="Logo CGR" class="img-fluid" style="max-height: 48px;" />
         </div>
 
         <!-- Textos institucionales -->
         <div>
-            <h5 class="fw-bold mb-1 text-white">Bienvenido al Sistema de Consulta de Certificación de Contratos</h5>
-            <p class="mb-0 text-white-50 small">
+            <h5 class="fw-bold mb-0 text-white" style="font-size: 1.1rem;">Bienvenido al Sistema de Consulta de Certificación de Contratos</h5>
+            <small class="text-white-50">
                 Contraloría General de la República.
-            </p>
+            </small>
         </div>
-    </div>
+    </header>
 
-    
     <!-- Contenido principal -->
-    <main role="main" class="container py-4 flex-grow-1">
+    <main role="main" class="container-fluid px-md-5 py-4 flex-grow-1">
         @RenderBody()
     </main>
 
-    <!-- Pie de página -->
+    <!-- Pie de página Institucional -->
     <footer class="text-center py-3 bg-white border-top mt-auto">
         <div class="container">
-            <div class="mb-2">
-                <img src="~/images/escudobandera.png" alt="Escudo República Dominicana" class="img-fluid" style="max-height: 50px;" />
+            <div class="mb-1">
+                <img src="~/images/escudobandera.png" alt="Escudo República Dominicana" class="img-fluid" style="max-height: 40px;" />
             </div>
-            <small class="text-muted d-block">&copy; @DateTime.Now.Year Contraloría General de la República. Todos los derechos reservados.</small>
+            <small class="text-muted d-block" style="font-size: 0.75rem;">
+                &copy; @DateTime.Now.Year Contraloría General de la República. Todos los derechos reservados.
+            </small>
         </div>
     </footer>
 
