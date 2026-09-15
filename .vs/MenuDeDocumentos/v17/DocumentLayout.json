@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,30 +19,42 @@
       "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\base\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\base\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\emmanuel perez\\documents\\trabajo pasantia\\menu de documentos\\menudedocumentos\\menudedocumentos\\base\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\base\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 276,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,86 +90,151 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAIwDEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T13:16:16.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\appsettings.json",
+              "RelativeDocumentMoniker": "MenuDeDocumentos\\appsettings.json",
+              "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\appsettings.json",
+              "RelativeToolTip": "MenuDeDocumentos\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-15T13:25:25.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Program.cs",
+              "RelativeDocumentMoniker": "MenuDeDocumentos\\Program.cs",
+              "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Program.cs",
+              "RelativeToolTip": "MenuDeDocumentos\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAACgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T13:23:31.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "MenuDeDocumentos\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "MenuDeDocumentos\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-15T13:17:27.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "MenuDeDocumentos\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-15T13:16:32.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ZLIBSIGOB.cs",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Base\\ZLIBSIGOB.cs",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Base\\ZLIBSIGOB.cs",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Base\\ZLIBSIGOB.cs",
               "RelativeToolTip": "MenuDeDocumentos\\Base\\ZLIBSIGOB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T19:24:42.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "IDocumentoService.cs",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
               "RelativeToolTip": "MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T19:24:24.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DocumentoController.cs",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
               "RelativeToolTip": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wCwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T19:23:56.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Documento.cs",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Models\\Documento.cs",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Models\\Documento.cs",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Models\\Documento.cs",
               "RelativeToolTip": "MenuDeDocumentos\\Models\\Documento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T19:23:31.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
               "RelativeToolTip": "MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAxwJoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-14T19:23:11.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DocumentoService.cs",
               "DocumentMoniker": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
               "RelativeDocumentMoniker": "MenuDeDocumentos\\Service\\DocumentoService.cs",
               "ToolTip": "C:\\Users\\Emmanuel Perez\\Documents\\Trabajo Pasantia\\Menu de documentos\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
               "RelativeToolTip": "MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-14T19:22:03.313Z",
               "EditorCaption": ""

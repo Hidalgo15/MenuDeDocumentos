@@ -2,6 +2,7 @@
 using System.Data;
 using MenuDeDocumentos.Base;
 using MenuDeDocumentos.Service.Interface;
+using MenuDeDocumentos.Models;
 
 namespace MenuDeDocumentos.Service;
 
@@ -62,5 +63,10 @@ public class DocumentoService : IDocumentoService
             if (File.Exists(rutaComprimida)) File.Delete(rutaComprimida);
             if (!string.IsNullOrEmpty(rutaDescomprimida) && File.Exists(rutaDescomprimida)) File.Delete(rutaDescomprimida);
         }
+    }
+
+    public async  Task<List<Documento>> ObtenerListaDocumentosAsync()
+    {
+        throw new NotImplementedException();
     }
 }

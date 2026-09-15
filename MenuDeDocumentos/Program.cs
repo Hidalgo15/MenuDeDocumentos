@@ -1,3 +1,6 @@
+using MenuDeDocumentos.Service;
+using MenuDeDocumentos.Service.Interface;
+
 namespace MenuDeDocumentos
 {
     public class Program
@@ -9,13 +12,14 @@ namespace MenuDeDocumentos
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddScoped<IDocumentoService, DocumentoService>();
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                //app.UseExceptionHandler("/");
+                app.UseExceptionHandler("/Documento/Index");
                 app.UseHsts();
             }
 
@@ -26,9 +30,13 @@ namespace MenuDeDocumentos
 
             app.UseAuthorization();
 
+            // Mapea los controladores basados en atributos ([Route("Documento")])
+            app.MapControllers();
+
+            // Ruta por defecto MVC
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Documento}/{action=Index}/{id?}");
 
             app.Run();
         }
