@@ -19,8 +19,12 @@ namespace MenuDeDocumentos.Controllers.Documentos
         [HttpGet("~/{codigo?}")]
         [HttpGet("")]
         [HttpGet("{codigo?}")]
-        public IActionResult Index(string? codigo)
+        public async Task <IActionResult> Index(string? codigo)
         {
+            // 1. Obtener la lista completa de documentos para el menú lateral
+           // var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync();
+           // ViewBag.Documentos = listaDocumentos;
+
             var model = new Documento();
 
             if (string.IsNullOrEmpty(codigo))
@@ -35,7 +39,11 @@ namespace MenuDeDocumentos.Controllers.Documentos
 
                 // Genera la URL resolviendo el parámetro directo en la plantilla de ruta
                 ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigo = codigoInt });
-                return View();
+
+                // Buscar el nombre del documento actual para mostrarlo en el encabezado del visor
+                //var docActual = listaDocumentos.FirstOrDefault(d => d.Codigo == codigoInt);
+               // ViewBag.NombreDocumentoActual = docActual?.Nombre ?? $"Documento #{codigoInt}";
+                return View(model);
             }
 
             return BadRequest("El código proporcionado debe ser un número entero válido.");
