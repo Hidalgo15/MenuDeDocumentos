@@ -1,5 +1,12 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\contraloria_azul.png
+wwwroot\images\cupula-blanca.png
+wwwroot\images\escudobandera.png
+wwwroot\images\Loginizquierdo.png
+wwwroot\images\LogoContraloriaWeb.png
+wwwroot\images\logo_contraloria.png
+wwwroot\images\logo_contraloria_blanco.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
