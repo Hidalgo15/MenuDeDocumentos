@@ -22,9 +22,11 @@
                 </div>
                 <div class="card-body p-2">
 
-                    <div class="accordion accordion-flush" id="accordionCategorias">
-                        @for (int i = 0; i < categorias.Count; i++)
-                        {
+                    @if (documentos.Any())
+                    {
+                        <div class="accordion accordion-flush" id="accordionCategorias">
+                            @for (int i = 0; i < categorias.Count; i++)
+                            {
                             var grupo = categorias[i];
                             string categoryId = $"cat_{i}";
                             string headingId = $"heading_{i}";
@@ -63,13 +65,24 @@
                             </div>
                         }
                     </div>
+                    }
+                    else
+                    {
+                        <div class="text-center text-muted py-4">
+                            <p class="mb-2">
+                                <i class="bi bi-inbox" style="font-size: 2rem;"></i>
+                            </p>
+                            <p class="small">Ingresa un código en la URL para cargar documentos</p>
+                            <p class="small"><code>https://sistema.url/codigo</code></p>
+                        </div>
+                    }
 
                 </div>
             </div>
         </div>
 
         <!-- PANEL DERECHO: Visor PDF -->
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="card border-0 shadow-sm rounded-3 p-3 bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                     <h5 id="tituloDocumento" class="fw-bold mb-0 text-dark">@tituloInicial</h5>
