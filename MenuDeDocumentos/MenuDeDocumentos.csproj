@@ -8,10 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="wwwroot\images\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Update="ZLibSIGOB32.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
