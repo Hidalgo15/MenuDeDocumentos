@@ -4,8 +4,8 @@ namespace MenuDeDocumentos.Service.Interface
 {
     public interface IDocumentoService
     {
-        Task<List<Documento>> ObtenerListaDocumentosAsync(int codigo);
-        Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigo, string nombreTabla);
-        Task<byte[]> DescomprimirDocumentoAsync(byte[] archivoComprimido, int codigo);
+        Task<List<Documento>> ObtenerListaDocumentosAsync(int codigoPadre);
+        Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigoPadre, int indiceHijo, string nombreTabla);
+        Task<byte[]> DescomprimirDocumentoAsync(byte[] archivoComprimido, int codigoPadre, int indiceHijo);
     }
 }

@@ -1,85 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menudedocumentos\\menudedocumentos\\service\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menudedocumentos\\menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pdesarrollo\\.copilot\\plans\\plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menudedocumentos\\menudedocumentos\\utils\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\utils\\zlibsigob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 249,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md [Versi\u00F3n preliminar]",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\.copilot\\plans\\plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\.copilot\\plans\\plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md",
-              "ToolTip": "C:\\Users\\pdesarrollo\\.copilot\\plans\\plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md [Versi\u00F3n preliminar]",
-              "RelativeToolTip": "..\\..\\..\\.copilot\\plans\\plan-investigar-y-fix-error-no-se-encontr-el-archivo-comprimido-en-la-bd.md [Versi\u00F3n preliminar]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-09-15T19:12:04.736Z",
-              "EditorCaption": " [Versi\u00F3n preliminar]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ZLIBSIGOB.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Utils\\ZLIBSIGOB.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Utils\\ZLIBSIGOB.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Utils\\ZLIBSIGOB.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Utils\\ZLIBSIGOB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T18:25:41.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DocumentoController.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAMwB4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T18:25:34.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DocumentoService.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T18:25:18.895Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "VerticalTabListWidth": 175,
+      "DocumentGroups": []
     }
   ]
 }
