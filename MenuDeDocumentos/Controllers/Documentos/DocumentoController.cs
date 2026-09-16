@@ -1,8 +1,10 @@
+using MenuDeDocumentos.Models;
 using MenuDeDocumentos.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MenuDeDocumentos.Controllers.Documentos
 {
+    [Route("")]
     [Route("Documento")]
     public class DocumentoController : Controller
     {
@@ -14,35 +16,42 @@ namespace MenuDeDocumentos.Controllers.Documentos
             _documentoService = documentoService;
         }
 
-        [HttpGet("~/")]
+        [HttpGet("")]
         [HttpGet("Index")]
+        [HttpGet("{codigo:int}")]
         public async Task<IActionResult> Index(int? codigo)
         {
-            var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync();
-            ViewBag.Documentos = listaDocumentos;
-
-            if (listaDocumentos.Any())
+            if (codigo.HasValue && codigo.Value > 0)
             {
-                var docSeleccionado = codigo.HasValue
-                    ? listaDocumentos.FirstOrDefault(d => d.Codigo == codigo.Value) ?? listaDocumentos.First()
-                    : listaDocumentos.First();
+                var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync(codigo.Value);
+                ViewBag.Documentos = listaDocumentos;
 
-                ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigo = docSeleccionado.Codigo });
-                ViewBag.NombreDocumentoActual = docSeleccionado.Nombre;
+                if (listaDocumentos.Any())
+                {
+                    var docSeleccionado = listaDocumentos.First();
+
+                    ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigoPadre = codigo.Value, indiceHijo = docSeleccionado.Codigo });
+                    ViewBag.NombreDocumentoActual = docSeleccionado.Nombre;
+                }
+            }
+            else
+            {
+                ViewBag.Documentos = new List<Documento>();
             }
 
             return View();
         }
 
-        [HttpGet("DescargarDocumento/{codigo:int}")]
-        public async Task<IActionResult> DescargarDocumento(int codigo)
+        // Recibe ambos parámetros de manera limpia y sin depender de sesiones
+        [HttpGet("DescargarDocumento/{codigoPadre:int}/{indiceHijo:int}")]
+        public async Task<IActionResult> DescargarDocumento(int codigoPadre, int indiceHijo)
         {
-            if (codigo <= 0)
+            if (codigoPadre <= 0 || indiceHijo < 0)
             {
-                return BadRequest("Código de documento inválido.");
+                return BadRequest("Parámetros de documento inválidos.");
             }
 
-            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigo, NombreTabla);
+            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigoPadre, indiceHijo, NombreTabla);
 
             if (archivoBytes == null || archivoBytes.Length == 0)
             {
@@ -51,7 +60,7 @@ namespace MenuDeDocumentos.Controllers.Documentos
 
             try
             {
-                byte[] pdfBytes = await _documentoService.DescomprimirDocumentoAsync(archivoBytes, codigo);
+                byte[] pdfBytes = await _documentoService.DescomprimirDocumentoAsync(archivoBytes, codigoPadre, indiceHijo);
                 return File(pdfBytes, "application/pdf");
             }
             catch (Exception)
