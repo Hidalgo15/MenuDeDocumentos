@@ -1,14 +1,15 @@
-﻿using MenuDeDocumentos.Base;
-using MenuDeDocumentos.Models;
+﻿using MenuDeDocumentos.Models;
 using MenuDeDocumentos.Service.Interface;
+using MenuDeDocumentos.Utils;
 using Microsoft.Data.SqlClient;
-using System.Data;
 
 namespace MenuDeDocumentos.Service;
 
 public class DocumentoService : IDocumentoService
 {
     private readonly string _connectionString;
+    // Semáforo estático para permitir que solo UN hilo a la vez use la librería nativa de ZLIB
+    private static readonly SemaphoreSlim _zlibLock = new SemaphoreSlim(1, 1);
 
     public DocumentoService(IConfiguration configuration)
     {
@@ -16,39 +17,84 @@ public class DocumentoService : IDocumentoService
             ?? throw new InvalidOperationException("La cadena de conexión 'ConexionSIGOB' no existe.");
     }
 
-    public async Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigo, string nombreTabla)
+    public async Task<List<Documento>> ObtenerListaDocumentosAsync(int codigoPadre)
     {
-        await using var conn = new SqlConnection(_connectionString);
-        await using var cmd = new SqlCommand("[dbo].[usp_buscar_documentos_tramite_compras]", conn)
+        var lista = new List<Documento>();
+        int indice = 0;
+
+        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, codigoPadre, async reader =>
         {
-            CommandType = CommandType.StoredProcedure
-        };
+            while (await reader.ReadAsync())
+            {
+                string nombreCrudo = reader["nombre"]?.ToString() ?? "Sin Título";
+                string nombreSeguro = string.Join("_", nombreCrudo.Split(Path.GetInvalidFileNameChars()));
+                nombreSeguro = nombreSeguro.Replace("\\", "-").Replace("/", "-");
 
-        cmd.Parameters.AddWithValue("@nombre_mia", nombreTabla);
-        cmd.Parameters.AddWithValue("@codigo", codigo);
+                lista.Add(new Documento
+                {
+                    Codigo = indice++,
+                    Categoria = reader["molde"]?.ToString() ?? "General",
+                    Nombre = nombreSeguro
+                });
+            }
+        });
 
-        await conn.OpenAsync();
-        await using var reader = await cmd.ExecuteReaderAsync();
-
-        if (await reader.ReadAsync() && !reader.IsDBNull(reader.GetOrdinal("document")))
-        {
-            return (byte[])reader["document"];
-        }
-
-        return null;
+        return lista;
     }
 
-    public async Task<byte[]> DescomprimirDocumentoAsync(byte[] archivoComprimido, int codigo)
+    public async Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigoPadre, int indiceHijo, string nombreTabla)
     {
-        string tempDir = Path.Combine(Path.GetTempPath(), "VisorDocumentos");
+        byte[]? resultado = null;
+        int contador = 0;
+
+        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, codigoPadre, async reader =>
+        {
+            while (await reader.ReadAsync())
+            {
+                if (contador == indiceHijo)
+                {
+                    string colNombre = HasColumn(reader, "documento") ? "documento" : "document";
+
+                    if (!reader.IsDBNull(reader.GetOrdinal(colNombre)))
+                    {
+                        resultado = (byte[])reader[colNombre];
+                    }
+                    break;
+                }
+                contador++;
+            }
+        });
+
+        return resultado;
+    }
+
+    private static bool HasColumn(SqlDataReader reader, string columnName)
+    {
+        for (int i = 0; i < reader.FieldCount; i++)
+        {
+            if (reader.GetName(i).Equals(columnName, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public async Task<byte[]> DescomprimirDocumentoAsync(byte[] archivoComprimido, int codigoPadre, int indiceHijo)
+    {
+        string tempDir = Path.Combine(Path.GetTempPath(), "VisorDocumentos", Guid.NewGuid().ToString());
         Directory.CreateDirectory(tempDir);
 
-        string rutaComprimida = Path.Combine(tempDir, $"Documento_{codigo}.zlib");
+        string rutaComprimida = Path.Combine(tempDir, $"Doc_{codigoPadre}_{indiceHijo}.zlib");
         string? rutaDescomprimida = null;
 
+        // PROTECCIÓN CON SEMÁFORO: 
+        // Esto evita que dos hilos disparen ZLIBSIGOB al mismo tiempo y corrompan la memoria nativa.
+        await _zlibLock.WaitAsync();
         try
         {
             await File.WriteAllBytesAsync(rutaComprimida, archivoComprimido);
+
             rutaDescomprimida = ZLIBSIGOB.DescomprimirArchivoZLIB(rutaComprimida);
 
             if (string.IsNullOrEmpty(rutaDescomprimida) || !File.Exists(rutaDescomprimida))
@@ -60,13 +106,17 @@ public class DocumentoService : IDocumentoService
         }
         finally
         {
-            if (File.Exists(rutaComprimida)) File.Delete(rutaComprimida);
-            if (!string.IsNullOrEmpty(rutaDescomprimida) && File.Exists(rutaDescomprimida)) File.Delete(rutaDescomprimida);
-        }
-    }
+            // Liberamos el semáforo para que la siguiente petición pueda pasar de forma segura
+            _zlibLock.Release();
 
-    public async Task<List<Documento>> ObtenerListaDocumentosAsync()
-    {
-        throw new NotImplementedException();
+            // Limpieza de temporales
+            try
+            {
+                if (File.Exists(rutaComprimida)) File.Delete(rutaComprimida);
+                if (!string.IsNullOrEmpty(rutaDescomprimida) && File.Exists(rutaDescomprimida)) File.Delete(rutaDescomprimida);
+                if (Directory.Exists(tempDir)) Directory.Delete(tempDir, true);
+            }
+            catch { }
+        }
     }
 }

@@ -1,9 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using MenuDeDocumentos.Models;
 using MenuDeDocumentos.Service.Interface;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MenuDeDocumentos.Controllers.Documentos
 {
+    [Route("")]
     [Route("Documento")]
     public class DocumentoController : Controller
     {
@@ -15,50 +16,42 @@ namespace MenuDeDocumentos.Controllers.Documentos
             _documentoService = documentoService;
         }
 
-        [HttpGet("~/")]
-        [HttpGet("~/{codigo?}")]
         [HttpGet("")]
-        [HttpGet("{codigo?}")]
-        public async Task<IActionResult> Index(string? codigo)
+        [HttpGet("Index")]
+        [HttpGet("{codigo:int}")]
+        public async Task<IActionResult> Index(int? codigo)
         {
-            // 1. Obtener la lista completa de documentos para el menú lateral
-            // var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync();
-            // ViewBag.Documentos = listaDocumentos;
-
-            var model = new Documento();
-
-            if (string.IsNullOrEmpty(codigo))
+            if (codigo.HasValue && codigo.Value > 0)
             {
-                return View(model);
+                var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync(codigo.Value);
+                ViewBag.Documentos = listaDocumentos;
+
+                if (listaDocumentos.Any())
+                {
+                    var docSeleccionado = listaDocumentos.First();
+
+                    ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigoPadre = codigo.Value, indiceHijo = docSeleccionado.Codigo });
+                    ViewBag.NombreDocumentoActual = docSeleccionado.Nombre;
+                }
+            }
+            else
+            {
+                ViewBag.Documentos = new List<Documento>();
             }
 
-            if (int.TryParse(codigo, out int codigoInt))
-            {
-                model.NoDocumento = $"DOC-{codigoInt}";
-                model.Codigo = codigoInt;
-
-                // Genera la URL resolviendo el parámetro directo en la plantilla de ruta
-                ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigo = codigoInt });
-
-                // Buscar el nombre del documento actual para mostrarlo en el encabezado del visor
-                //var docActual = listaDocumentos.FirstOrDefault(d => d.Codigo == codigoInt);
-                // ViewBag.NombreDocumentoActual = docActual?.Nombre ?? $"Documento #{codigoInt}";
-
-                return View();
-            }
-
-            return BadRequest("El código proporcionado debe ser un número entero válido.");
+            return View();
         }
 
-        [HttpGet("DescargarDocumento/{codigo:int}")]
-        public async Task<IActionResult> DescargarDocumento(int codigo)
+        // Recibe ambos parámetros de manera limpia y sin depender de sesiones
+        [HttpGet("DescargarDocumento/{codigoPadre:int}/{indiceHijo:int}")]
+        public async Task<IActionResult> DescargarDocumento(int codigoPadre, int indiceHijo)
         {
-            if (codigo <= 0)
+            if (codigoPadre <= 0 || indiceHijo < 0)
             {
-                return BadRequest("Código de documento inválido.");
+                return BadRequest("Parámetros de documento inválidos.");
             }
 
-            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigo, NombreTabla);
+            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigoPadre, indiceHijo, NombreTabla);
 
             if (archivoBytes == null || archivoBytes.Length == 0)
             {
@@ -67,7 +60,7 @@ namespace MenuDeDocumentos.Controllers.Documentos
 
             try
             {
-                byte[] pdfBytes = await _documentoService.DescomprimirDocumentoAsync(archivoBytes, codigo);
+                byte[] pdfBytes = await _documentoService.DescomprimirDocumentoAsync(archivoBytes, codigoPadre, indiceHijo);
                 return File(pdfBytes, "application/pdf");
             }
             catch (Exception)
