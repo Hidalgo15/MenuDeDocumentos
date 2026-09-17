@@ -9,8 +9,8 @@
     // Agrupación dinámica por Categoría (molde)
     var categorias = documentos.GroupBy(d => d.Categoria).ToList();
     int codigoPadreActual = ViewContext.RouteData.Values["codigo"] != null
-    ? Convert.ToInt32(ViewContext.RouteData.Values["codigo"])
-    : (int.TryParse(Context.Request.Query["codigo"], out int c) ? c : 0);
+        ? Convert.ToInt32(ViewContext.RouteData.Values["codigo"])
+        : (int.TryParse(Context.Request.Query["codigo"], out int c) ? c : 0);
 }
 
 <div class="container-fluid py-2">
@@ -45,10 +45,10 @@
                                             @grupo.Key
                                         </button>
                                     </h2>
+                                    <!-- Se elimina data-bs-parent para permitir múltiples tarjetas abiertas -->
                                     <div id="@categoryId"
                                          class="accordion-collapse collapse @(i == 0 ? "show" : "")"
-                                         aria-labelledby="@headingId"
-                                         data-bs-parent="#accordionCategorias">
+                                         aria-labelledby="@headingId">
                                         <div class="accordion-body p-0">
                                             <div class="list-group list-group-flush">
                                                 @foreach (var doc in grupo)
