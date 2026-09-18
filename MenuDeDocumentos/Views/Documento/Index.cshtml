@@ -36,18 +36,18 @@
 
                                 <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
                                     <h2 class="accordion-header" id="@headingId">
-                                        <button class="accordion-button fw-bold text-primary @(i != 0 ? "collapsed" : "")"
+                                        <button class="accordion-button fw-bold text-primary"
                                                 type="button"
                                                 data-bs-toggle="collapse"
                                                 data-bs-target="#@categoryId"
-                                                aria-expanded="@(i == 0 ? "true" : "false")"
+                                                aria-expanded="true"
                                                 aria-controls="@categoryId">
                                             @grupo.Key
                                         </button>
                                     </h2>
                                     <!-- Se elimina data-bs-parent para permitir múltiples tarjetas abiertas -->
                                     <div id="@categoryId"
-                                         class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+                                         class="accordion-collapse collapse show"
                                          aria-labelledby="@headingId">
                                         <div class="accordion-body p-0">
                                             <div class="list-group list-group-flush">
